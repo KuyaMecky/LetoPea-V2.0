@@ -40,9 +40,9 @@ On this step the Neural Network is ready to apply everything it has learnt to th
 # High DPI
 > Qt Widgets is an old technology and does not have a good support for high DPI settings, making these images look distorted when your system has DPI applied above 100%.
 You can minimize this problem using a workaround by applying this code below in "main.py" just below the import of the Qt modules.
-```python
 ![Screenshot 2023-02-15 174357](https://user-images.githubusercontent.com/75725809/218991767-52da0115-e256-4a82-9ec9-61455c9119db.png)
 
+```python
 # ADJUST QT FONT DPI FOR HIGHT SCALE
 from modules import *
 from widgets import *
