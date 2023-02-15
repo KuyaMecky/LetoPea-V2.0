@@ -1,6 +1,6 @@
-<div style="text-align: center;">
-    <img src="https://user-images.githubusercontent.com/75725809/218989993-caf5923a-0649-41ce-8f60-87369f707bc5.png" alt="logo">
-</div>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/75725809/218989993-caf5923a-0649-41ce-8f60-87369f707bc5.png" alt="logo">
+</p>
 
 # LetoPea-V2
 Basic-Sign-Langugae-Recognition-Using-Machine-Learning
