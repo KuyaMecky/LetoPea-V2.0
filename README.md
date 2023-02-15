@@ -7,7 +7,7 @@
 Neural Network created using Sequential architecture and combination of LSTM and Dense layers in order to translate Basic Filipino Sign Language (FSL) into text to speech.
 
 
-> ## Description
+## Description
 > This project provides an opportunity for people to train their own Neural Network by recording their own dataset of FSL signs in an intuitive and simple manner.
 The whole project can be split into three main parts:
 1. Data collection;
