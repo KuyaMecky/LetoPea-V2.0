@@ -1,0 +1,161 @@
+import tkinter as tk
+from tkinter import messagebox
+import os
+import hashlib
+# check if the file exists
+if not os.path.exists("users.txt"):
+    # create the file if it doesn't exist
+    with open("users.txt", "w"):
+        pass
+
+class LoginForm:
+    def __init__(self, root):
+        # create the form elements
+        self.root = root
+        self.root.geometry("300x200")
+        self.root.title("Login Form")
+        self.root.configure(bg='#b3b3b3')
+
+        # create variables to hold the text for the labels
+        self.username_text = tk.StringVar()
+        self.password_text = tk.StringVar()
+
+        self.username_label = tk.Label(self.root, textvariable=self.username_text, bg='#b3b3b3')
+        self.username_entry = tk.Entry(self.root, width=30)
+        self.password_label = tk.Label(self.root, textvariable=self.password_text, bg='#b3b3b3')
+        self.password_entry = tk.Entry(self.root, width=30, show="*")
+        self.login_button = tk.Button(self.root, text="Login", width=10, command=self.login)
+        self.register_button = tk.Button(self.root, text="Register", width=10, command=self.register)
+
+        # set the initial text for the labels
+        self.username_text.set("Username:")
+        self.password_text.set("Password:")
+
+        # add the form elements to the root window
+        self.username_label.pack()
+        self.username_entry.pack()
+        self.password_label.pack()
+        self.password_entry.pack()
+        self.login_button.pack()
+        self.register_button.pack()
+
+    def login(self):
+    # read the username and password from the form
+        username = self.username_entry.get()
+        password = self.password_entry.get()
+
+    # open the users file and check if the username and password are correct
+        with open("users.txt", "r") as f:
+            for line in f:
+                user, passwd, firstname, lastname, age, email, address, birthday = line.strip().split(":")
+                if user == username and passwd == password:
+                # login successful
+                  messagebox.showinfo("Success", f"Welcome, {firstname} {lastname}! You are now logged in.")
+                  return
+    # login failed
+                messagebox.showerror("Error", "Invalid username or password.")
+
+
+    def do_register(self):
+    # read the data from the form
+        username = self.username_entry.get()
+        password = self.password_entry.get()
+        firstname = self.firstname_entry.get()
+        lastname = self.lastname_entry.get()
+        age = self.age_entry.get()
+        email = self.email_entry.get()
+        address = self.address_entry.get()
+        birthday = self.birthday_entry.get()
+
+        # hash the password
+        hashed_password = hashlib.sha256(password.encode()).hexdigest()
+
+        # open the users file and check if the username is already taken
+        with open("users.txt", "r") as f: username, password, firstname, lastname, age, email, address, birthday = line.strip().rsplit(":", maxsplit=7)
+
+
+
+    # add the new user to the users file
+        with open("users.txt", "a") as f:
+            f.write(f"{username}:{hashed_password}:{firstname}:{lastname}:{age}:{email}:{address}:{birthday}\n")
+
+        # close the registration window
+        register_window.destroy()
+
+        # update the text for the labels
+        self.username_text.set("Username (new):")
+        self.password_text.set("Password (new):")
+        self.username_entry.delete(0, 'end')
+        self.password_entry.delete(0, 'end')
+
+        # registration successful
+        messagebox.showinfo("Success", "You are now registered and logged in.")
+
+
+    def register(self):
+    # create a new window for registration
+        global register_window
+        register_window = tk.Toplevel(self.root)
+        register_window.geometry("400x300")
+        register_window.title("Registration Form")
+        register_window.configure(bg="#b3b3b3")
+
+    # create variables to hold the text for the labels
+        self.firstname_text = tk.StringVar()
+        self.lastname_text = tk.StringVar()
+        self.age_text = tk.StringVar()
+        self.email_text = tk.StringVar()
+        self.address_text = tk.StringVar()
+        self.birthday_text = tk.StringVar()
+
+    # create the form elements
+        self.username_label = tk.Label(register_window, text="Username:", bg="#b3b3b3")
+        self.username_entry = tk.Entry(register_window, width=30)
+        self.password_label = tk.Label(register_window, text="Password:", bg="#b3b3b3")
+        self.password_entry = tk.Entry(register_window, width=30, show="*")
+        self.firstname_label = tk.Label(register_window, textvariable=self.firstname_text, bg="#b3b3b3")
+        self.firstname_entry = tk.Entry(register_window, width=30)
+        self.lastname_label = tk.Label(register_window, textvariable=self.lastname_text, bg="#b3b3b3")
+        self.lastname_entry = tk.Entry(register_window, width=30)
+        self.age_label = tk.Label(register_window, textvariable=self.age_text, bg="#b3b3b3")
+        self.age_entry = tk.Entry(register_window, width=30)
+        self.email_label = tk.Label(register_window, textvariable=self.email_text, bg="#b3b3b3")
+        self.email_entry = tk.Entry(register_window,width=30)
+        self.address_label = tk.Label(register_window, textvariable=self.address_text, bg="#b3b3b3")
+        self.address_entry = tk.Entry(register_window, width=30)
+        self.birthday_label = tk.Label(register_window, textvariable=self.birthday_text, bg="#b3b3b3")
+        self.birthday_entry = tk.Entry(register_window, width=30)
+        self.register_button = tk.Button(register_window, text="Register", width=10, command=self.do_register)
+
+# set the initial text for the labels
+        self.firstname_text.set("First name:")
+        self.lastname_text.set("Last name:")
+        self.age_text.set("Age:")
+        self.email_text.set("Email:")
+        self.address_text.set("Address:")
+        self.birthday_text.set("Birthday:")
+
+# add the form elements to the register window
+        self.username_label.pack()
+        self.username_entry.pack()
+        self.password_label.pack()
+        self.password_entry.pack()
+        self.firstname_label.pack()
+        self.firstname_entry.pack()
+        self.lastname_label.pack()
+        self.lastname_entry.pack()
+        self.age_label.pack()
+        self.age_entry.pack()
+        self.email_label.pack()
+        self.email_entry.pack()
+        self.address_label.pack()
+        self.address_entry.pack()
+        self.birthday_label.pack()
+        self.birthday_entry.pack()
+        self.register_button.pack()
+
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    form = LoginForm(root)
+    root.mainloop()

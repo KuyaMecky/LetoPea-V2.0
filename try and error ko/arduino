@@ -1,0 +1,165 @@
+#include "thingProperties.h"
+#include <ArduinoIoTCloud.h>
+#include <Arduino_ConnectionHandler.h>
+
+
+
+#define wifiLed    2
+
+
+int toggleState_1 = 0; //Define integer to remember the toggle state for relay 1
+int toggleState_2 = 0; //Define integer to remember the toggle state for relay 2
+int reconnectFlag = 0;
+void onSwitch1Change();
+void onSwitch2Change();
+void onScheduler101Change();
+
+void relayOnOff(int relay) {
+  switch (relay) {
+    case 1:
+      if (toggleState_1 == 1) {
+
+        digitalWrite(4, HIGH);
+        toggleState_1 = 0;
+
+      }
+      else {
+
+        digitalWrite(4, LOW);
+        toggleState_1 = 1;
+
+      }
+      delay(100);
+      break;
+    case 2:
+      if (toggleState_2 == 1) {
+        digitalWrite(5, HIGH);
+        toggleState_2 = 0;
+
+      }
+      else {
+        digitalWrite(5, LOW);
+        toggleState_2 = 1;
+
+      }
+      delay(100);
+      break;
+
+
+    default : break;
+  }
+}
+
+
+void doThisOnConnect() {
+  /* add your custom code here */
+  Serial.println("Board successfully connected to Arduino IoT Cloud");
+  digitalWrite(wifiLed, HIGH);
+}
+void doThisOnSync() {
+  /* add your custom code here */
+  Serial.println("Thing Properties synchronised");
+}
+
+void doThisOnDisconnect() {
+  /* add your custom code here */
+  Serial.println("Board disconnected from Arduino IoT Cloud");
+  digitalWrite(wifiLed, LOW);
+}
+
+void setup() {
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+
+  pinMode(wifiLed, OUTPUT);
+
+  initProperties();
+
+  // Connect to Arduino IoT Cloud
+  ArduinoCloud.begin(ArduinoIoTPreferredConnection);
+  ArduinoCloud.addCallback(ArduinoIoTCloudEvent::CONNECT, doThisOnConnect);
+  ArduinoCloud.addCallback(ArduinoIoTCloudEvent::SYNC, doThisOnSync);
+  ArduinoCloud.addCallback(ArduinoIoTCloudEvent::DISCONNECT, doThisOnDisconnect);
+
+  setDebugMessageLevel(2);
+  ArduinoCloud.printDebugInfo();
+
+}
+
+void loop() {
+
+  ArduinoCloud.update();
+  
+
+}
+
+void onSwitch1Change() {
+  //Control the device
+  if (switch_1 == 1)
+  {
+
+    digitalWrite(4, HIGH);
+
+    toggleState_1 = 1;
+  }
+  else
+  {
+
+
+    digitalWrite(4, LOW);
+
+
+    toggleState_1 = 0;
+  }
+}
+
+void onSwitch2Change() {
+  //Control the device
+  if (switch_2 == 1)
+  {
+    digitalWrite(5, HIGH);
+
+    toggleState_2 = 1;
+  }
+  else
+  {
+    digitalWrite(5, LOW);
+
+    toggleState_2 = 0;
+  }
+}
+/*
+  Since Scheduler101 is READ_WRITE variable, onScheduler101Change() is
+  executed every time a new value is received from IoT Cloud.
+*/
+void onScheduler101Change()  {
+
+   
+  // Add your code here to act upon Scheduler101 change
+
+  if (scheduler_101.isActive()) {
+    switch_1 = true;
+    digitalWrite(4, HIGH);
+    toggleState_1 = 1;
+    }
+
+   else {
+    switch_1 = false;
+    digitalWrite(4, LOW);
+    toggleState_1 = 0;
+    }
+
+//
+if (scheduler_101.isActive()) {
+    switch_2 = true;
+    digitalWrite(5, HIGH);
+    toggleState_2 = 1;
+    }
+
+   else {
+    switch_2 = false;
+    digitalWrite(5, LOW);
+    toggleState_2 = 0;
+    }    
+
+}
