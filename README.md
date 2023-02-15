@@ -96,8 +96,8 @@ After expoting in .py and change the line "import resources_rc" to "from. Resouc
 > To participate create a "Issue" with the name beginning with "#LETOPEA_learn-to-speak", leaving the link of your project on Github, name of the creator and what is its functionality. Your project will be added and this list will be deleted from "Issue".
 **Malicious programs will not be added**!
 
-# as of 01-31-23 v1.0
-## as of 01-31-2023 80% of the system progression in complte
+# As of 01-31-23 v1.0
+> ## as of 01-31-2023 80% of the system progression in complte
 in this stae of the model structure is need to add more model to train in the pipe
 ## and take note if the scale of the learning models 
 basic korean to filpino words as refferences take note 
@@ -108,12 +108,12 @@ lagyan na ng connection into csv logout na naka connect sa login form
 ## for the login and registration form add the otp at the same functionality on the register email address and resset button
 ## para naman sa home panel mag lagay ng Gif nsa home 
 ## para sa CV2 
-gawing full screen ung sa feed and add more button para sa 
+gawing full screen ung sa feed and add more button para sa.
 
 # 11-02-2023 v1.0
-## For further enhancements*
+> ## For further enhancements*
 * i will recreate this as api and integrate as crossplatform supported such as mobile accesible to everyone and i will put some new features such
-* voice recognitions and auto transcribe language to speech (mobile) * nag a-auto translate ng speech to speech device * https://www.facebook.com/reel/574234814563770/
+* voice recognitions and auto transcribe language to speech (mobile) * nag a-auto translate ng speech to speech device * https://www.facebook.com/reel/574234814563770/ .
 # TODO 
 ## *Create a Login form and registration form with OTP verificatiosn
 ## *Create a MIS (seperated)
