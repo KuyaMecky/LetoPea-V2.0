@@ -2,14 +2,13 @@
   <img src="https://user-images.githubusercontent.com/75725809/218989993-caf5923a-0649-41ce-8f60-87369f707bc5.png" alt="logo">
 </p>
 
-# LetoPea-V2
-Basic-Sign-Langugae-Recognition-Using-Machine-Learning
+ # LetoPea-V2
+>Basic-Sign-Langugae-Recognition-Using-Machine-Learning
 Neural Network created using Sequential architecture and combination of LSTM and Dense layers in order to translate Basic Filipino Sign Language (FSL) into text to speech.
 
 
-## Description
-
-This project provides an opportunity for people to train their own Neural Network by recording their own dataset of FSL signs in an intuitive and simple manner.
+> ## Description
+> This project provides an opportunity for people to train their own Neural Network by recording their own dataset of FSL signs in an intuitive and simple manner.
 The whole project can be split into three main parts:
 1. Data collection;
 2. Model training;
