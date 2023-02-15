@@ -32,6 +32,7 @@ Once the Neural Network is compiled, one can proceed with the model training and
 ## Real Time Predictions
 
 On this step the Neural Network is ready to apply everything it has learnt to the real-world problem. [MediaPipe Holistic](https://google.github.io/mediapipe/solutions/holistic) pipeline processes every frame captured by a videocamera and extracts hands' landmarks. Every new frame the scripts appends the landmarks to the previous ones until it reaches the length 10. Once 10 frames are processed and the corresponding landmarks are grouped together, the script converts the list with all the landmarks into an array and passes this array to the trained Neural Network so it can predict the sign of the user's hands.
+![lag sa cv2 issue](https://user-images.githubusercontent.com/75725809/218991337-978ea0d3-0a6b-409f-8089-5eb3c91e69d5.png)
 
 # Modern GUI PySide6 / PyQt6
 > **Warning**: this project was created using PySide6 and Python 3.9, using previous versions can cause compatibility problems.
@@ -40,6 +41,7 @@ On this step the Neural Network is ready to apply everything it has learnt to th
 > Qt Widgets is an old technology and does not have a good support for high DPI settings, making these images look distorted when your system has DPI applied above 100%.
 You can minimize this problem using a workaround by applying this code below in "main.py" just below the import of the Qt modules.
 ```python
+![Screenshot 2023-02-15 174357](https://user-images.githubusercontent.com/75725809/218991767-52da0115-e256-4a82-9ec9-61455c9119db.png)
 
 # ADJUST QT FONT DPI FOR HIGHT SCALE
 from modules import *
@@ -94,20 +96,18 @@ After expoting in .py and change the line "import resources_rc" to "from. Resouc
 > To participate create a "Issue" with the name beginning with "#LETOPEA_learn-to-speak", leaving the link of your project on Github, name of the creator and what is its functionality. Your project will be added and this list will be deleted from "Issue".
 **Malicious programs will not be added**!
 
-## #####################################################################################################################
-
-## as of 01-31-23 v1.0
-# as of 01-31-2023 80% of the system progression in complte
+# as of 01-31-23 v1.0
+## as of 01-31-2023 80% of the system progression in complte
 in this stae of the model structure is need to add more model to train in the pipe
-# and take note if the scale of the learning models 
+## and take note if the scale of the learning models 
 basic korean to filpino words as refferences take note 
-# for the detect  frame add more layout and flows
+## for the detect  frame add more layout and flows
 balikan ung mga break point sa sjson files and widgets
-# for upper part settings
+## for upper part settings
 lagyan na ng connection into csv logout na naka connect sa login form 
-# for the login and registration form add the otp at the same functionality on the register email address and resset button
-# para naman sa home panel mag lagay ng Gif nsa home 
-# para sa CV2 
+## for the login and registration form add the otp at the same functionality on the register email address and resset button
+## para naman sa home panel mag lagay ng Gif nsa home 
+## para sa CV2 
 gawing full screen ung sa feed and add more button para sa 
 
 # 11-02-2023 v1.0
