@@ -215,10 +215,11 @@ class MainWindow(QMainWindow):
                 folder = selected_folder[0]
                 shutil.rmtree(os.path.join(data_path, folder))
                 QMessageBox.information(self, "Deleted", "Selected folder has been deleted.")
+                self.ListView()
             else:
                 QMessageBox.warning(self, "Warning", "No folder selected.")
         
-                self.ListView()
+                
 #/////////////////////////////////////////////////////////////////////////////////////
 #/////////////////////////////////////////////////////////////////////////////////////
 ## ==> SPLASH SCREEN
