@@ -114,21 +114,20 @@ gawing full screen ung sa feed and add more button para sa.
 > ## For further enhancements*
 * i will recreate this as api and integrate as crossplatform supported such as mobile accesible to everyone and i will put some new features such
 * voice recognitions and auto transcribe language to speech (mobile) * nag a-auto translate ng speech to speech device * https://www.facebook.com/reel/574234814563770/ .
-# TODO >
-## *Create a Login form and registration form with OTP verificatiosn
-## *Create a MIS (seperated)
-## *Create a lock yarn para sa authentication
-## *integrate as web app by REST API
-## *Create a Docker
-## and always clean as you go (Codes)
+# TODO 
+> ## *Create a Login form and registration form with OTP verificatiosn
+> ## *Create a MIS (seperated)
+> ## *Create a lock yarn para sa authentication
+> ## *integrate as web app by REST API
+> ## *Create a Docker
+> ## and always clean as you go (Codes)
 
 ## This will be our Final Prroject and will be serve and submited only in Cavite State university 
-
-# NOTE The source code will be open for further enhancement 
+> # NOTE The source code will be open for further enhancement 
 tapos to be continue na .. things to remember "mag lagay ng limitation and intruction pa dito sa readme, and always remember to consult kay sir antang at kamusta palagi mga ka groupo and last piliping maging kalmado at gawing motibasyon ang nararamdaman mo ngayon into positive way at iwasang mag isip ng kung anu anu, at more KAPE lezzzgoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo" 
 isa pa pala transalate ko papala lahat ng nilagay ko dito into tagalog shits
 
 
 
-* To be continued
+> * To be continued
 ...
