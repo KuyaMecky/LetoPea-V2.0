@@ -1,4 +1,6 @@
 # LetoPea-V2
+![logo](https://user-images.githubusercontent.com/75725809/218989993-caf5923a-0649-41ce-8f60-87369f707bc5.png)
+
 Basic-Sign-Langugae-Recognition-Using-Machine-Learning
 Neural Network created using Sequential architecture and combination of LSTM and Dense layers in order to translate Basic Filipino Sign Language (FSL) into text to speech.
 
