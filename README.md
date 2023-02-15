@@ -114,7 +114,7 @@ gawing full screen ung sa feed and add more button para sa.
 > ## For further enhancements*
 * i will recreate this as api and integrate as crossplatform supported such as mobile accesible to everyone and i will put some new features such
 * voice recognitions and auto transcribe language to speech (mobile) * nag a-auto translate ng speech to speech device * https://www.facebook.com/reel/574234814563770/ .
-# TODO 
+# TODO >
 ## *Create a Login form and registration form with OTP verificatiosn
 ## *Create a MIS (seperated)
 ## *Create a lock yarn para sa authentication
