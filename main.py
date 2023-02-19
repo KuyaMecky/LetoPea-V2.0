@@ -12,6 +12,7 @@ import shutil
 import speech_recognition as sr
 import sys
 import platform
+from CV2_loading import loadingscreen
 # IMPORT / GUI AND MODULES AND WIDGETS
 # ///////////////////////////////////////////////////////////////
 from modules import *
@@ -152,8 +153,11 @@ class MainWindow(QMainWindow):
     #///////////////////////////////////////////////////////////////////
     # pang FSL detection function
     def Start_FSL_Recognition(self):
-        # import main_function.py and call desired function
-        import main_function
+       import main_function  #and call desired function
+
+        # Do your FSL Recognition tasks here
+
+
     #//////////////////////////////////////////////////////////////////
     #//////////////////////////////////////////////////////////////////
     #//////////////////////////////////////////////////////////////////

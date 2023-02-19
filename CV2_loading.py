@@ -6,19 +6,14 @@ from PySide2 import QtCore, QtGui, QtWidgets
 from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
 from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PySide2.QtWidgets import *
-
 # GUI FILE
 from ui_cv_loading_screen import Ui_SplashScreen
-
 
 # GLOBALS
 counter = 0
 jumper = 10
-
-
-
 ## ==> SPLASHSCREEN WINDOW
-class SplashScreen(QMainWindow):
+class loadingscreen(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
         self.ui = Ui_SplashScreen()
@@ -43,19 +38,20 @@ class SplashScreen(QMainWindow):
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.progress)
         # TIMER IN MILLISECONDS
-        self.timer.start(25)
+        
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.progress)
         # TIMER IN MILLISECONDS
         self.timer.start(25)
-        # CHANGE DESCRIPTION
+ 
 
         # Change Texts
         QtCore.QTimer.singleShot(1000, lambda: self.ui.labelLoadingInfo.setText("<strong>LOADING</strong> LANGUAGES"))
+        QtCore.QTimer.singleShot(1500, lambda: self.ui.labelLoadingInfo.setText("<strong>LOADING</strong> LIBRARIES"))
         QtCore.QTimer.singleShot(2000, lambda: self.ui.labelLoadingInfo.setText("<strong>LOADING</strong> INTERFACE"))
-        QtCore.QTimer.singleShot(5000, lambda: self.ui.labelLoadingInfo.setText("<strong>LOADING</strong> MODELS"))
-       
-
+        QtCore.QTimer.singleShot(3000, lambda: self.ui.labelLoadingInfo.setText("<strong>LOADING</strong> MODELS"))
+        QtCore.QTimer.singleShot(6000, lambda: self.ui.labelLoadingInfo.setText("<strong>LOADING</strong> CAMERA IS OPENING"))
+        
         ## SHOW ==> MAIN WINDOW
         ########################################################################
         self.show()
@@ -69,7 +65,7 @@ class SplashScreen(QMainWindow):
         value = counter
 
         # HTML TEXT PERCENTAGE
-        htmlText = """<p><span style=" font-size:68pt;">{VALUE}</span><span style=" font-size:58pt; vertical-align:super;">%</span></p>"""
+        htmlText = """<p><span style=" font-size:69pt;">{VALUE}</span><span style=" font-size:40pt; vertical-align:super;">%</span></p>"""
 
         # REPLACE VALUE
         newHtml = htmlText.replace("{VALUE}", str(jumper))
@@ -77,7 +73,7 @@ class SplashScreen(QMainWindow):
         if(value > jumper):
             # APPLY NEW PERCENTAGE TEXT
             self.ui.labelPercentage.setText(newHtml)
-            jumper += 10
+            jumper += 1
 
         # SET VALUE TO PROGRESS BAR
         # fix max value error if > than 100
@@ -85,18 +81,16 @@ class SplashScreen(QMainWindow):
         self.progressBarValue(value)
 
         # CLOSE SPLASH SCREE AND OPEN APP
-        #if counter > 100:
+
+        if counter == 100:
+            import main_function
             # STOP TIMER
-         #   self.timer.stop()
-
-            # SHOW MAIN WINDOW
-          ## self.main.show()
-
-            # CLOSE SPLASH SCREEN
-            #self.close()
-
+            self.timer.stop()
+            self.close(self)     
         # INCREASE COUNTER
-        counter += 0.5
+        counter += .5
+      
+       
 
     ## DEF PROGRESS BAR VALUE
     ########################################################################
@@ -124,9 +118,8 @@ class SplashScreen(QMainWindow):
         # APPLY STYLESHEET WITH NEW VALUES
         self.ui.circularProgress.setStyleSheet(newStylesheet)
 
-
-
+# IN THIS PART WHERE YOU LOAD THE ENTIRE WI
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = SplashScreen()
+    window = loadingscreen()
     sys.exit(app.exec_())

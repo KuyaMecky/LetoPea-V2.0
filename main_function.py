@@ -4,13 +4,12 @@ import os
 import mediapipe as mp
 import cv2
 from my_functions import *
+
 import keyboard
 from gtts import gTTS
 from playsound import playsound
 import random
 from tensorflow.keras.models import load_model
-import tkinter as tk
-
 
 
 r1 = random.randint(1, 10000000)
@@ -60,7 +59,7 @@ with mp.solutions.holistic.Holistic(min_detection_confidence=0.75, min_tracking_
             
             if keyboard.is_pressed(' '):
                 sentence = [' ']
-                
+            
             textsize = cv2.getTextSize(' '.join(sentence), cv2.FONT_HERSHEY_SIMPLEX, 1, 2)[0]
             text_X_coord = (image.shape[1] - textsize[0]) // 2
                 
@@ -71,13 +70,13 @@ with mp.solutions.holistic.Holistic(min_detection_confidence=0.75, min_tracking_
             cv2.namedWindow("Camera", cv2.WINDOW_NORMAL)
             cv2.imshow("Camera", image)
             cv2.setWindowProperty("Camera", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
-            cv2.resizeWindow("Camera", 700,500)
-            cv2.moveWindow("Camera", 300, 100)
+            cv2.resizeWindow("Camera", 1200,800)
+            cv2.moveWindow("Camera", 80, 50)
             
             if cv2.getWindowProperty('Camera',cv2.WND_PROP_VISIBLE) < 1:
                 break
             cv2.waitKey(1)
             if cv2.waitKey(10) & 0xFF == ord('q'):
                 break
-        cap.release()
-        cv2.destroyAllWindows()
+cap.release()
+cv2.destroyAllWindows()

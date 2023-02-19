@@ -114,7 +114,7 @@ class Ui_SplashScreen(object):
 
     def retranslateUi(self, SplashScreen):
         SplashScreen.setWindowTitle(QCoreApplication.translate("SplashScreen", u"MainWindow", None))
-        self.labelTitle.setText(QCoreApplication.translate("SplashScreen", u"<html><head/><body><p><span style=\" font-weight:600; color:#9b9bff;\">OPENING </span>FSL CAMERA</p></body></html>", None))
+        self.labelTitle.setText(QCoreApplication.translate("SplashScreen", u"<html><head/><body><p><span style=\" font-weight:600; color:#fb7c00;\">OPENING </span>FSL CAMERA</p></body></html>", None))
         self.labelPercentage.setText(QCoreApplication.translate("SplashScreen", u"<p><span style=\" font-size:78pt;\">0</span><span style=\" font-size:58pt; vertical-align:super;\">%</span></p>", None))
         self.labelLoadingInfo.setText(QCoreApplication.translate("SplashScreen",u"<strong>LOADING</strong> CAMERA VISION", None))
         self.labelCredits.setText(QCoreApplication.translate("SplashScreen", u"Please wait ...", None))

@@ -116,6 +116,8 @@ gawing full screen ung sa feed and add more button para sa.
 > ## *integrate as web app by REST API
 > ## *Create a Docker
 > ## and always clean as you go (Codes)
+> ## gumawa ng loading screen na naka thread sa cv2 #
+> ## guamwa ng another loading screen para sa rendiering Cudda threading
 
 ## This will be our Final Prroject and will be serve and submited only in Cavite State university 
 > # NOTE The source code will be open for further enhancement 
