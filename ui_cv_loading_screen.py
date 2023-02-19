@@ -7,7 +7,7 @@ from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
 from PySide2.QtWidgets import *
 
 
-class Ui_SplashScreen(object):
+class Ui_loadingScreen(object):
     def setupUi(self, SplashScreen):
         if SplashScreen.objectName():
             SplashScreen.setObjectName(u"SplashScreen")

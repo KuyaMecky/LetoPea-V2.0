@@ -153,7 +153,14 @@ class MainWindow(QMainWindow):
     #///////////////////////////////////////////////////////////////////
     # pang FSL detection function
     def Start_FSL_Recognition(self):
-       import main_function  #and call desired function
+       #import main_function  #and call desired function
+        # PANG TAWAG NG EXTERNAL LOADING GUI PANG NA NAKA THREAD SA MAIN_MAINFUNCTION.PY
+        from PySide2.QtWidgets import QApplication
+        if __name__ == '__main__':
+            app = QApplication([])
+            loading_screen = loadingscreen()
+            app.exec_()
+
 
         # Do your FSL Recognition tasks here
 

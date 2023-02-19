@@ -7,7 +7,7 @@ from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTi
 from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PySide2.QtWidgets import *
 # GUI FILE
-from ui_cv_loading_screen import Ui_SplashScreen
+from ui_cv_loading_screen import Ui_loadingScreen
 
 # GLOBALS
 counter = 0
@@ -16,10 +16,10 @@ jumper = 10
 class loadingscreen(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
-        self.ui = Ui_SplashScreen()
+        self.ui = Ui_loadingScreen()
         self.ui.setupUi(self)
 
-        ## ==> SET INITIAL PROGRESS BAR TO (0) ZERO
+        ## ==>PANG SET NG INITIAL PROGRESS BAR TO (0) ZERO
         self.progressBarValue(0)
 
         ## ==> REMOVE STANDARD TITLE BAR
