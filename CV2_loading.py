@@ -83,9 +83,9 @@ class loadingscreen(QMainWindow):
         # CLOSE SPLASH SCREE AND OPEN APP
 
         if counter == 100:
-            import main_function
             # STOP TIMER
             self.timer.stop()
+            import main_function
             self.close(self)     
         # INCREASE COUNTER
         counter += .5
