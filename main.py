@@ -96,14 +96,14 @@ class MainWindow(QMainWindow):
         self.show()
         # SET CUSTOM THEME
         useCustomTheme = False
-        themeFile = "themes\py_dracula_light.qss"
+        themeFile = "themes\dark.qss"
        
         # SET THEME AND HACKS
-        if useCustomTheme:
+        #if useCustomTheme:
             # LOAD AND APPLY STYLE
-            UIFunctions.theme(self, themeFile, True)
+        #    UIFunctions.theme(self, themeFile, True)
             # SET HACKS
-            AppFunctions.setThemeHack(self)
+        #    AppFunctions.setThemeHack(self)
         # SET HOME PAGE AND SELECT MENU
         # ///////////////////////////////////////////////////////////////
         widgets.stackedWidget.setCurrentWidget(widgets.home)
