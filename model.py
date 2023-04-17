@@ -39,7 +39,7 @@ model.add(Dense(32, activation='relu'))
 model.add(Dense(actions.shape[0], activation='softmax'))
 
 model.compile(optimizer='Adam', loss='categorical_crossentropy', metrics=['categorical_accuracy'])
-model.fit(X_train, Y_train, epochs=1500)
+model.fit(X_train, Y_train, epochs=1000)
 
 model.save('my_model')
 
