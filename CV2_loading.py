@@ -86,7 +86,7 @@ class loadingscreen(QMainWindow):
             # STOP TIMER
             self.timer.stop()
             import main_function
-            self.close(self)     
+            self.close()     
         # INCREASE COUNTER
         counter += .5
       

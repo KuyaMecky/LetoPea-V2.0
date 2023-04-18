@@ -198,8 +198,12 @@ class MainWindow(QMainWindow):
         self.ListView()
         
 
+    
+
     # pang delete
     def ListView(self):
+        # pang delete button
+        self.ui.pushButton.clicked.connect(self.delete)
         # pang list view
         #self.ui.listWidget = QListWidget()
         data_path = os.path.join("data")
@@ -208,15 +212,13 @@ class MainWindow(QMainWindow):
         for folder in folders:
             item = QListWidgetItem(folder)
             self.ui.listWidget.addItem(item)
-        
-        # pang delete button
-        self.ui.pushButton.clicked.connect(self.delete)
-   
+
+
         # babalikan kita, ung pang return ng value pang refresh ng folder 
         # after mag delete return sa buttun ng newpage for refresh
- # refresh the list of folders
+    # refresh ng list of folders
     def delete(self):
-        confirm = QMessageBox.question(self, 'Confirm', "Are you sure you want to delete the selected folder?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+        confirm = QMessageBox.question(self, 'Confirm', "Are you sure you want to delete the selected folder?", QMessageBox.Yes | QMessageBox.No)
         if confirm == QMessageBox.Yes:
             data_path = os.path.join("data")
             selected_folder = [self.ui.listWidget.item(i).text() for i in range(self.ui.listWidget.count()) if self.ui.listWidget.item(i).isSelected()]
@@ -224,10 +226,17 @@ class MainWindow(QMainWindow):
                 folder = selected_folder[0]
                 shutil.rmtree(os.path.join(data_path, folder))
                 QMessageBox.information(self, "Deleted", "Selected folder has been deleted.")
-                self.ListView()
-            else:
-                QMessageBox.warning(self, "Warning", "No folder selected.")
+                #pang refresh ng list sa folder ng data
+                self.ListView() 
         
+        elif confirm == QMessageBox.No:
+            return
+        else:
+            QMessageBox.warning(self, "Warning", "No folder selected.")
+            self.ListView()    
+
+
+            
 
 #/////////////////////////////////////////////////////////////////////////////////////
 #/////////////////////////////////////////////////////////////////////////////////////

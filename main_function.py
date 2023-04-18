@@ -70,8 +70,8 @@ with mp.solutions.holistic.Holistic(min_detection_confidence=0.75, min_tracking_
             cv2.namedWindow("Camera", cv2.WINDOW_NORMAL)
             cv2.imshow("Camera", image)
             cv2.setWindowProperty("Camera", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
-            cv2.resizeWindow("Camera", 1200,800)
-            cv2.moveWindow("Camera", 80, 50)
+            #cv2.resizeWindow("Camera", 1080,700)
+            #cv2.moveWindow("Camera", 80, 50)
             
             if cv2.getWindowProperty('Camera',cv2.WND_PROP_VISIBLE) < 1:
                 break

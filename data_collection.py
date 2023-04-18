@@ -64,8 +64,15 @@ def train_pangwords(text_input, actions = None):
                             (20,20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255,25,25), 1, cv2.LINE_AA)
                 cv2.imshow('Camera', image)
                 cv2.waitKey(1)
+                
+                
             
             if cv2.getWindowProperty('Camera',cv2.WND_PROP_VISIBLE) < 1:
+                cv2.namedWindow("Camera", cv2.WINDOW_NORMAL)
+                cv2.imshow("Camera", image)
+                cv2.setWindowProperty("Camera", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+                cv2.resizeWindow("Camera", 1200,800)
+                cv2.moveWindow("Camera", 80, 50)
                 break
 
             keypoints = keypoint_extraction(results)
